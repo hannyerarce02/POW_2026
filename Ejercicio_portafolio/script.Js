@@ -26,17 +26,21 @@ document.getElementById("presentacion").textContent =
 // Mostrar historial académico
 function mostrarAcademico() {
 
-    const lista = document.getElementById("historialAcademico");
+    const lista =
+        document.getElementById("historialAcademico");
 
     lista.innerHTML = "";
 
     portafolio.historialAcademico.forEach(function (estudio) {
 
-        const elemento = document.createElement("li");
+        const elemento =
+            document.createElement("li");
 
-        elemento.className = "list-group-item";
+        elemento.className =
+            "list-group-item";
 
-        elemento.textContent = estudio;
+        elemento.textContent =
+            estudio;
 
         lista.appendChild(elemento);
 
@@ -48,17 +52,21 @@ function mostrarAcademico() {
 // Mostrar historial laboral
 function mostrarLaboral() {
 
-    const lista = document.getElementById("historialLaboral");
+    const lista =
+        document.getElementById("historialLaboral");
 
     lista.innerHTML = "";
 
     portafolio.historialLaboral.forEach(function (trabajo) {
 
-        const elemento = document.createElement("li");
+        const elemento =
+            document.createElement("li");
 
-        elemento.className = "list-group-item";
+        elemento.className =
+            "list-group-item";
 
-        elemento.textContent = trabajo;
+        elemento.textContent =
+            trabajo;
 
         lista.appendChild(elemento);
 
@@ -87,7 +95,9 @@ document
             return;
         }
 
-        portafolio.historialAcademico.push(nuevoEstudio);
+        portafolio.historialAcademico.push(
+            nuevoEstudio
+        );
 
         input.value = "";
 
@@ -111,32 +121,12 @@ document
             return;
         }
 
-        portafolio.historialLaboral.push(nuevoTrabajo);
+        portafolio.historialLaboral.push(
+            nuevoTrabajo
+        );
 
         input.value = "";
 
         mostrarLaboral();
 
     });
-
-
-// Cambiar foto de perfil
-const inputFoto =
-    document.getElementById("inputFoto");
-
-const fotoPerfil =
-    document.getElementById("fotoPerfil");
-
-
-inputFoto.addEventListener("change", function () {
-
-    const archivo = inputFoto.files[0];
-
-    if (archivo) {
-
-        fotoPerfil.src =
-            URL.createObjectURL(archivo);
-
-    }
-
-});
