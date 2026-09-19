@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reportar un caso - Cali Vigilante</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <h1>Cali Vigilante</h1>
+            <p class="tagline">Registro ciudadano de presuntos abusos de autoridad</p>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reportar.html">Reportar un caso</a></li>
+                    <li><a href="casos.html">Ver casos registrados</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <p style="text-align: center; font-weight: bold;">Total de casos registrados en la plataforma: <span id="contador-casos">0</span></p>
+
+        <main>
+            <section id="formulario-rapido" aria-labelledby="titulo-formulario">
+                <h2 id="titulo-formulario">Registrar un nuevo caso</h2>
+
+                <form id="form-reporte">
+                    <div class="campo">
+                        <label for="fecha">Fecha del hecho</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="lugar">Lugar (barrio / comuna)</label>
+                        <!-- Se agregó el atributo pattern para aceptar solo letras, números, espacios y comas -->
+                        <input type="text" id="lugar" name="lugar" placeholder="Ej: Comuna 15, Cali" required pattern="[A-Za-zÁ-Úá-ú0-9\s,]+">
+                    </div>
+
+                    <div class="campo">
+                        <label for="descripcion">Descripción del hecho</label>
+                        <!-- Se agregó el atributo minlength para obligar a escribir al menos 15 caracteres -->
+                        <textarea id="descripcion" name="descripcion" rows="4" required minlength="15"></textarea>
+                    </div>
+
+                    <div class="campo">
+                        <label for="autoridad">Autoridad involucrada</label>
+                        <select id="autoridad" name="autoridad">
+                            <option value="policia">Policía Nacional</option>
+                            <option value="esmad">ESMAD</option>
+                            <option value="ejercito">Ejército</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+
+                    <button type="submit">Enviar reporte</button>
+                </form>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Proyecto académico — Curso de Desarrollo Web. Datos de ejemplo, no representan casos reales.</p>
+        </footer>
+
+      
+        <script src="script.js"></script>
+
+        <!-- MENSAJES DE ERROR PERSONALIZADOS-->
+        <script>
+            const inputLugar = document.getElementById('lugar');
+            const inputDescripcion = document.getElementById('descripcion');
+
+            // Validación en tiempo real del lugar
+            inputLugar.addEventListener('input', function() {
+                if (inputLugar.validity.patternMismatch) {
+                    inputLugar.setCustomValidity("El lugar solo debe contener letras, números, espacios y comas.");
+                } else {
+                    inputLugar.setCustomValidity(""); // Quita error si está correcto
+                }
+            });
+
+            // Validación en tiempo real de la descripción
+            inputDescripcion.addEventListener('input', function() {
+                if (inputDescripcion.validity.tooShort) {
+                    inputDescripcion.setCustomValidity("La descripción es muy corta. Por favor, detalle más el hecho (mínimo 15 caracteres).");
+                } else {
+                    inputDescripcion.setCustomValidity("");
+                }
+            });
+        </script>
+    </body>
+</html>

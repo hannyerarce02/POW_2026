@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portafolio Personal</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+    <!-- Encabezado -->
+    <header class="bg-dark text-white text-center py-4">
+        <h1>Portafolio Personal</h1>
+        <p class="mb-0">Hannyer Arce Ararat</p>
+    </header>
+
+
+    <!-- Contenido principal -->
+    <main class="container my-5">
+
+        <!-- Presentación -->
+        <section class="card shadow-sm mb-4">
+
+            <div class="card-body">
+
+                <div class="row align-items-center">
+
+                    <!-- Foto -->
+                    <div class="col-md-4 text-center mb-3 mb-md-0">
+
+                        <img
+                            id="fotoPerfil"
+                            src="foto.jpg"
+                            alt="Foto de perfil"
+                            class="img-fluid border border-dark"
+                            style="width: 180px; height: 180px; object-fit: cover;"
+                        >
+
+                        <!-- Seleccionar foto -->
+                        <input
+                            type="file"
+                            id="inputFoto"
+                            accept="image/*"
+                            class="form-control mt-3"
+                        >
+
+                    </div>
+
+
+                    <!-- Presentación -->
+                    <div class="col-md-8">
+
+                        <h2 class="card-title">
+                            Presentación
+                        </h2>
+
+                        <p id="presentacion" class="card-text"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Historiales -->
+        <div class="row g-4">
+
+            <!-- Historial académico -->
+            <div class="col-md-6">
+
+                <section class="card shadow-sm h-100">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title border-bottom pb-2">
+                            Historial Académico
+                        </h2>
+
+                        <ul
+                            id="historialAcademico"
+                            class="list-group list-group-flush">
+                        </ul>
+
+
+                        <!-- Agregar formación -->
+                        <div class="input-group mt-4">
+
+                            <input
+                                type="text"
+                                id="nuevoAcademico"
+                                class="form-control"
+                                placeholder="Agregar formación académica"
+                            >
+
+                            <button
+                                type="button"
+                                id="btnAcademico"
+                                class="btn btn-dark">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- Historial laboral -->
+            <div class="col-md-6">
+
+                <section class="card shadow-sm h-100">
+
+                    <div class="card-body">
+
+                        <h2 class="card-title border-bottom pb-2">
+                            Historial Laboral
+                        </h2>
+
+                        <ul
+                            id="historialLaboral"
+                            class="list-group list-group-flush">
+                        </ul>
+
+
+                        <!-- Agregar experiencia -->
+                        <div class="input-group mt-4">
+
+                            <input
+                                type="text"
+                                id="nuevoLaboral"
+                                class="form-control"
+                                placeholder="Agregar experiencia laboral"
+                            >
+
+                            <button
+                                type="button"
+                                id="btnLaboral"
+                                class="btn btn-dark">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Pie de página -->
+    <footer class="bg-dark text-white text-center py-3">
+
+        <p class="mb-0">
+            Portafolio Personal - 2026
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

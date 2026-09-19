@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Casos registrados - Cali Vigilante</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <h1>Cali Vigilante</h1>
+            <p class="tagline">Registro ciudadano de presuntos abusos de autoridad</p>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reportar.html">Reportar un caso</a></li>
+                    <li><a href="casos.html">Ver casos registrados</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <p style="text-align: center; font-weight: bold;">Total de casos registrados en la plataforma: <span id="contador-casos">0</span></p>
+
+        <main>
+            <!-- Filtros-->
+            <section id="filtros-busqueda" aria-labelledby="titulo-filtros" style="margin-bottom: 2rem;">
+                <h2 id="titulo-filtros" style="font-size: 1.2rem; margin-top: 0;">Buscar y filtrar casos</h2>
+                
+                <!-- Usamos un div con flexbox para poner los filtros lado a lado si hay espacio -->
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    
+                    <div class="campo" style="flex: 1; min-width: 200px;">
+                        <label for="buscar-caso">Buscar (lugar o palabra clave)</label>
+                        <input type="search" id="buscar-caso" placeholder="Ej: Comuna 15, marcha...">
+                    </div>
+
+                    <div class="campo" style="flex: 1; min-width: 200px;">
+                        <label for="filtro-autoridad">Filtrar por autoridad</label>
+                        <select id="filtro-autoridad">
+                            <option value="todas">Todas las autoridades</option>
+                            <option value="policia">Policía Nacional</option>
+                            <option value="esmad">ESMAD</option>
+                            <option value="ejercito">Ejército</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- tarjetas -->
+            <section id="lista-casos" aria-labelledby="titulo-casos">
+                <h2 id="titulo-casos">Todos los casos</h2>
+                <div id="contenedor-casos" class="casos-grid">
+                    
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>Proyecto académico — Curso de Desarrollo Web. Datos de ejemplo, no representan casos reales.</p>
+        </footer>
+
+      
+        <script src="script.js"></script>
+
+    </body>
+</html>
